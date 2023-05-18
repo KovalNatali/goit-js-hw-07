@@ -28,10 +28,28 @@ const instance = basicLightbox.create(`<div class ="modal">
     `);
 instance.show();
 
-galleryContainer.addEventListener("keydown", (event) => {
+
+galleryContainer.addEventListener("keydown", onClickEscape);
+
+function removeEventListenerEsc() {
+    galleryContainer.removeEventListener("keydown", onClickEscape);
+}
+function onClickEscape(event) {
     if(event.code === "Escape") {
         instance.close();
+        removeEventListenerEsc();
+        console.log("натиснули Escape")
     }
-})
+ }
+
 }
 console.log(galleryItems);
+// galleryContainer.addEventListener("keydown", (event) => {
+//     if(event.code === "Escape") {
+//         instance.close();
+    
+//         console.log("натиснули Escape")
+//     }
+// })
+
+// }
