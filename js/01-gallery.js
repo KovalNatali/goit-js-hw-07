@@ -38,7 +38,7 @@ function onClickEscape(event) {
     if(event.code === "Escape") {
         instance.close();
         removeEventListenerEsc();
-        console.log("натиснули Escape")
+   
     }
  }
 
